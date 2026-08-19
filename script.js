@@ -1,5 +1,5 @@
 const CONFIG = {
-  tokenAddress: "TBA",
+  tokenAddress: "5oZHHkXs6hgN2byLwJV4c4S6o6UrCfwnaBj5C36Xpump",
   dexScreenerPair: "",
   pumpFunUrl: "",
   twitter: "https://x.com/mrnavaccinex",
@@ -8,7 +8,7 @@ const CONFIG = {
 
 function isTokenLive() {
   const addr = (CONFIG.tokenAddress || "").trim();
-  return Boolean(addr) && addr.toUpperCase() !== "TBA" && addr.length > 20;
+  return Boolean(addr) && addr.toUpperCase() !== "5oZHHkXs6hgN2byLwJV4c4S6o6UrCfwnaBj5C36Xpump" && addr.length > 20;
 }
 
 function getPumpFunUrl() {
@@ -21,13 +21,13 @@ function initContract() {
   const display = document.getElementById("ca-display");
   const copyBtn = document.getElementById("copy-ca");
   const toast = document.getElementById("copy-toast");
-  const address = isTokenLive() ? CONFIG.tokenAddress : "TBA";
+  const address = isTokenLive() ? CONFIG.tokenAddress : "5oZHHkXs6hgN2byLwJV4c4S6o6UrCfwnaBj5C36Xpump";
 
   display.textContent = address;
 
   copyBtn.addEventListener("click", async () => {
     if (!isTokenLive()) {
-      toast.textContent = "CA is TBA — nothing to copy yet.";
+      toast.textContent = "CA is 5oZHHkXs6hgN2byLwJV4c4S6o6UrCfwnaBj5C36Xpump — nothing to copy yet.";
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 2500);
       return;
